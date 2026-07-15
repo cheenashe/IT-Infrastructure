@@ -1,0 +1,35 @@
+# IT Infrastructure Notes
+
+Practical breakdowns of IT infrastructure problems that show up as businesses scale — deployment slowdowns, rising cloud costs, and the architecture decisions that either support growth or quietly work against it.
+
+---
+
+## Signs Your IT Infrastructure Is Struggling to Support Growth
+
+Fast-growing companies usually hit the same wall: the infrastructure that worked for 10 people doesn't work for 100. The signs are consistent across most orgs:
+
+- **Deployment velocity drops** — what took minutes now takes hours, often due to manual steps that were never automated
+- **Cloud spend rises faster than usage** — a sign of missing rightsizing, orphaned resources, or no cost governance
+- **On-call load increases** — engineers spend more time firefighting than building, usually pointing to weak observability or brittle infra
+- **Scaling requires manual intervention** — infrastructure that isn't defined as code doesn't scale predictably
+
+### Quick diagnostic checklist
+
+| Symptom | Likely cause | Where to start |
+|---|---|---|
+| Slow, unpredictable deploys | Manual provisioning, no CI/CD standardization | Audit deployment pipeline for manual steps |
+| Cloud costs climbing with no clear driver | No tagging/cost governance, over-provisioned instances | Pull cost explorer data, check utilization under 30% |
+| Frequent outages under load | No autoscaling, single points of failure | Load test, review architecture for SPOFs |
+| Engineers stuck firefighting | Poor observability, alert fatigue | Audit monitoring coverage and alert signal-to-noise |
+
+### Infrastructure maturity stages
+
+Most orgs move through predictable stages rather than jumping levels:
+
+1. **Manual** — servers provisioned by hand, no standardization, high toil
+2. **Lift-and-shift cloud** — workloads moved to cloud without cloud-native patterns, often leads to overspend
+3. **Automated pipelines** — deployments automated, environments reproducible
+4. **Infrastructure as code** — Terraform/Pulumi-defined infra, Kubernetes, observability stack, FinOps practices active
+5. **Self-healing** — predictive autoscaling, automated remediation, AIOps for anomaly detection
+
+Knowing which stage you're actually in — not which stage you think you're in — is usually the first useful diagnostic step.
